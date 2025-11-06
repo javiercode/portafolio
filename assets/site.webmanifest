@@ -1,0 +1,16 @@
+{
+    "name": "Javier Canqui - Portfolio",
+    "short_name": "JCanqui",
+    "description": "AI Engineer & Software Developer Portfolio",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#142c69",
+    "icons": [
+        {
+            "src": "favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ]
+}

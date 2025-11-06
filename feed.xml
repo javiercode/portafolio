@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Browso | Get your device details</title>
+    <description>Everything you need to about your device, with some helpful troubleshooting tips, designed to help with your technical support.
+</description>
+    <link>https://www.browso.app/</link>
+    <atom:link href="https://www.browso.app/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 24 Jan 2021 13:20:23 +0000</pubDate>
+    <lastBuildDate>Sun, 24 Jan 2021 13:20:23 +0000</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+    
+  </channel>
+</rss>
