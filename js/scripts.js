@@ -592,7 +592,10 @@ $(document).ready(() => {
         }, 1e3);
         
     makeModalDraggable(".c-profile", ".c-viewer__address-bar--drag");
-    makeModalDraggable(".c-profile2", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-skill", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-skill-soft", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-contact", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-education", ".c-viewer__address-bar--drag");
 });
 
 $(document).on("click", ".js-toggle-window", function () {

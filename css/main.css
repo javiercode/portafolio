@@ -5498,30 +5498,55 @@ p, ul, li, a, dd, button {
   .s-home.th-browso-nine-eight .c-radio .c-btn:active {
     background: #b7c1c2; }
 
+/* Estilos BASE del modal - se aplican a todos los dispositivos */
 .c-modal {
   display: none;
   opacity: 0;
   position: absolute;
   transition: opacity 0.3s ease;
   cursor: default;
-  width: 60%;
   z-index: 1000;
 }
 
+/* ESCRITORIO (default) */
 .c-modal.in-view {
-  /* display: block;
-  position: absolute;
-  opacity: 1;
-  left: inherit;
-  top: 30%;
-  right: 40%; */
-
   display: block;
   opacity: 1;
+  width: 60%;
   top: 30%;
   left: 40%;
   right: auto;
   transform: translate(-50%, -50%);
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .c-modal {
+    display: block;
+    opacity: 0;
+    position: relative;
+    width: 90%;
+    margin: 4em auto 3em;
+    z-index: 800 !important;
+  }
+  
+  .c-modal.in-view {
+    display: block;
+    opacity: 1;
+    top: 30%;
+    right: auto;
+    /* Reset de propiedades de escritorio */
+    left: 0%;
+    width: 90%;
+    transform: none;
+    margin: 4em auto 3em; /* Mantener el margin específico de móvil */
+    transform: none !important; /* ← ESTA ES LA LÍNEA CLAVE */
+  }
+}
+
+.c-viewer-bar--drag {
+  cursor: move;
+  user-select: none;
 }
 
 .c-viewer-bar--drag {
