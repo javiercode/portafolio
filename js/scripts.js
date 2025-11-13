@@ -590,7 +590,8 @@ $(document).ready(() => {
         setTimeout(function () {
             adSupport();
         }, 1e3);
-        
+
+    document.querySelector(".years-experience").textContent = (new Date().getFullYear() - 2013)+" years";
     makeModalDraggable(".c-profile", ".c-viewer__address-bar--drag");
     makeModalDraggable(".c-skill", ".c-viewer__address-bar--drag");
     makeModalDraggable(".c-skill-soft", ".c-viewer__address-bar--drag");
