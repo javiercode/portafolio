@@ -110,16 +110,16 @@ const soundCloudPlayer = () => {
         $(".js-browser-name").text(platform.name), $(".js-browser-version").text(platform.version), $(".js-browser-size").text(e);
     },
     printAndEmail = () => {
-        ($printOs = $(".js-os").text()),
-            ($printColor = $(".js-color").text()),
-            ($printJs = $(".js-enabled").text()),
-            ($printCookies = $(".js-cookies").text()),
+        ($printOs = platform.os || $(".js-os").text()),
+            ($printColor = screen.colorDepth || $(".js-color").text()),
+            ($printJs = "Enabled"),
+            ($printCookies = navigator.cookieEnabled ? "Enabled" : "Disabled"),
             ($printFlash = $(".js-flash").text()),
-            ($printMotion = $(".js-motion").text()),
+            ($printMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "Prefers reduced" : "No Preference"),
             ($printBlocker = $(".js-blocker").text()),
-            ($printDensity = $(".js-density").text()),
-            ($printRes = $(".js-resolution").text()),
-            ($printBrowser = $(".js-browser-overview").text()),
+            ($printDensity = window.devicePixelRatio || $(".js-density").text()),
+            ($printRes = window.screen.width + " x " + window.screen.height),
+            ($printBrowser = platform.name + " " + platform.version),
             $(".js-print-os").text($printOs),
             $(".js-print-color").text($printColor),
             $(".js-print-js").text($printJs),
@@ -385,6 +385,8 @@ const emailCompose = () => {
                 $(".c-viewer--print").removeClass("in-view"), $(".c-viewer--main").show();
             }),
             $(".js-show-printer").click(function () {
+                printAndEmail();
+                emailCompose();
                 var i = e.width();
                 $(".c-viewer--print").addClass("in-view"),
                     $(".js-move").removeClass("is-moving"),
@@ -403,6 +405,8 @@ const emailCompose = () => {
                 $(".c-forward").removeClass("in-view"), $(".c-viewer--main").show();
             }),
             $(".js-show-forward").click(function () {
+                printAndEmail();
+                emailCompose();
                 var i = e.width();
                 $(".c-forward").addClass("in-view"),
                     $(".js-move").removeClass("is-moving"),
@@ -597,10 +601,104 @@ $(document).ready(() => {
     makeModalDraggable(".c-skill-soft", ".c-viewer__address-bar--drag");
     makeModalDraggable(".c-contact", ".c-viewer__address-bar--drag");
     makeModalDraggable(".c-education", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-experience", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-projects", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-references", ".c-viewer__address-bar--drag");
+    makeModalDraggable(".c-chat", ".c-viewer__address-bar--drag");
+
+    // Helpscout Beacon senior developer configurations
+    if (typeof window.Beacon === "function") {
+        window.Beacon("navigate", "/ask/message");
+        window.Beacon("config", {
+            color: "#142C69",
+            docsEnabled: false, // Disables Answers / search option!
+            translation: {
+                howCanWeHelp: "¿En qué te puedo ayudar?",
+                contactFormButton: "Enviar mensaje a Javier"
+            }
+        });
+        window.Beacon("identify", {
+            name: "Javier Elvis Canqui Llusco",
+            email: "javier.elvis.code@gmail.com"
+        });
+    }
 });
 
 $(document).on("click", ".js-toggle-window", function () {
   const name = $(this).data("window");
   const action = $(this).data("action") || "show";
   toggleWindow(name, action);
+});
+
+// Interactive Q&A Tab Switching for Chat Modal
+$(document).on("click", ".js-chat-tab", function() {
+    $(".js-chat-tab").css("color", "#aaa").removeClass("active");
+    $(this).css("color", "#fff").addClass("active");
+    
+    const tabId = $(this).data("tab");
+    $(".js-tab-content").addClass("u-d-none");
+    $("#tab-" + tabId).removeClass("u-d-none");
+});
+
+// Interactive Q&A Answers
+$(document).on("click", ".js-chat-ask", function() {
+    const key = $(this).data("q");
+    const qText = $(this).text();
+    let ans = "";
+    
+    switch(key) {
+        case "exp":
+            ans = "Tengo más de 12 años de experiencia en desarrollo full-stack, liderando equipos en el sector financiero y gubernamental. He diseñado arquitecturas distribuidas, motores de cobranzas, apps móviles masivas y modelos predictivos de Machine Learning que impactan directamente en el negocio.";
+            break;
+        case "tech":
+            ans = "Backend: Node.js, .NET Core, Java (Spring Boot), Python y PHP. Frontend: React, React Native, Angular, Vue y TypeScript. BD: Oracle, SQL Server, MongoDB, PostgreSQL, MySQL. DevOps: Docker, Jenkins, Kubernetes, Grafana y AWS.";
+            break;
+        case "leader":
+            ans = "He liderado equipos bajo metodologías ágiles (SCRUM/Kanban) y tradicionales (ICONIX). Creo firmemente en la mentoría, revisiones de código exhaustivas, automatización de pruebas y en el diseño de APIs limpias y bien documentadas para garantizar escalabilidad a largo plazo.";
+            break;
+        case "ml":
+            ans = "Sí, obtuve un postgrado en Machine Learning. He implementado en producción de modelos predictivos de comportamiento de clientes para captación y colocación de créditos, además de chatbots interactivos con flujos conversacionales avanzados en Dialogflow.";
+            break;
+        case "remote":
+            ans = "Sí, tengo amplia experiencia trabajando de forma remota con equipos distribuidos. Me adapto perfectamente a diferentes zonas horarias, soy autogestionado y enfocado a resultados prácticos de negocio.";
+            break;
+        case "contact":
+            ans = "Puedes escribirme directamente a javier.elvis.code@gmail.com, llamarme al +591 60609024 o conectar en LinkedIn: linkedin.com/in/javier-elvis-canqui-llusco-34630b42. ¡Estaré encantado de conversar!";
+            break;
+    }
+    
+    const chatBox = $("#chat-box");
+    chatBox.append(`<div class="c-chat-message c-chat-message--user">👤 Reclutador: ${qText}</div>`);
+    chatBox.append(`<div class="c-chat-message c-chat-message--bot">🤖 [Javier_AI]: ${ans}</div>`);
+    chatBox.scrollTop(chatBox[0].scrollHeight);
+});
+
+// Dynamic pre-formatted Mailto Contact Form trigger
+$(document).on("click", ".js-contact-send", function() {
+    const name = $("#contact-name").val().trim();
+    const email = $("#contact-email").val().trim();
+    const msg = $("#contact-message").val().trim();
+    
+    if(!name || !email || !msg) {
+        alert("Por favor completa todos los campos del formulario para enviar el correo.");
+        return;
+    }
+    
+    const subject = "Contacto Portafolio - " + name;
+    const body = `Hola Javier,
+
+Mi nombre es ${name} (${email}).
+
+Te escribo para lo siguiente:
+--------------------------------------------------
+${msg}
+--------------------------------------------------
+
+Quedo atento a tus comentarios. Saludos cordiales.`;
+    
+    const mailtoUrl = "mailto:javier.elvis.code@gmail.com" +
+                      "?subject=" + encodeURIComponent(subject) +
+                      "&body=" + encodeURIComponent(body);
+                      
+    window.location.href = mailtoUrl;
 });
