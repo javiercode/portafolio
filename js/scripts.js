@@ -612,6 +612,9 @@ $(document).ready(() => {
         window.Beacon("config", {
             color: "#142C69",
             docsEnabled: false, // Disables Answers / search option!
+            display: {
+                style: "manual" // Hides the default modern floating button!
+            },
             translation: {
                 howCanWeHelp: "¿En qué te puedo ayudar?",
                 contactFormButton: "Enviar mensaje a Javier"
@@ -621,6 +624,12 @@ $(document).ready(() => {
             name: "Javier Elvis Canqui Llusco",
             email: "javier.elvis.code@gmail.com"
         });
+    }
+});
+
+$(document).on("click", ".js-trigger-beacon", function() {
+    if (typeof window.Beacon === "function") {
+        window.Beacon("toggle");
     }
 });
 

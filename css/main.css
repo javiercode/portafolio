@@ -5575,11 +5575,11 @@ div.c-card__button {
     transform: scale(0.95) translate3d(0, 1px, 0) !important;
 }
 
-/* Floating Retro Chat Button */
-.c-floating-chat {
+/* Floating Retro Chat & Beacon Buttons with matching styles */
+.c-floating-chat,
+.c-floating-beacon {
     position: fixed;
     bottom: 20px;
-    left: 20px;
     z-index: 9999;
     background: #142C69;
     color: #fff;
@@ -5593,14 +5593,22 @@ div.c-card__button {
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-.c-floating-chat:hover {
+.c-floating-chat {
+    left: 20px;
+}
+.c-floating-beacon {
+    right: 20px;
+}
+.c-floating-chat:hover,
+.c-floating-beacon:hover {
     -webkit-transform: translate(-2px, -2px);
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0 0 #000;
     background: #42DDB3;
     color: #142C69;
 }
-.c-floating-chat:active {
+.c-floating-chat:active,
+.c-floating-beacon:active {
     -webkit-transform: translate(1px, 1px);
     transform: translate(1px, 1px);
     box-shadow: 1px 1px 0 0 #000;
