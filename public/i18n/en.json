@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "work_experience": "Experience",
+    "my_projects": "Projects",
+    "references": "References",
+    "support_chat": "Support / Chat",
+    "ask_me": "Ask Me",
+    "themes": "Themes"
+  },
+  "cards": {
+    "profile": {
+      "title": "Cover Letter",
+      "entry": "Javier Elvis Canqui Llusco"
+    },
+    "contact": {
+      "title": "Contact",
+      "entry": "How to contact me"
+    },
+    "education": {
+      "title": "Education",
+      "entry": "always studying"
+    },
+    "technical": {
+      "title": "Technical Skills",
+      "entry": "Skills"
+    },
+    "soft": {
+      "title": "Soft Skills",
+      "entry": "Skills"
+    },
+    "experience": {
+      "title": "Work Experience",
+      "entry": "years"
+    },
+    "projects": {
+      "title": "My Projects",
+      "entry": "Personal highlights"
+    },
+    "references": {
+      "title": "References",
+      "entry": "Personal and professional"
+    },
+    "environment": {
+      "title": "Your Environment",
+      "entry": "Device details"
+    }
+  },
+  "chat": {
+    "title": "Javier's Interactive Q&A Chat (AI)",
+    "qa_tab": "Questions & Answers",
+    "contact_tab": "Direct Contact",
+    "name_label": "Your Name:",
+    "email_label": "Your Email:",
+    "message_label": "Message:",
+    "send_btn": "Send Direct Email",
+    "placeholder_name": "e.g. John Doe",
+    "placeholder_email": "e.g. john@email.com",
+    "placeholder_msg": "Hi Javier, I would like to..."
+  }
+}

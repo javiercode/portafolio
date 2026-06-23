@@ -240,22 +240,21 @@ const emailCompose = () => {
                     duration: 500,
                     complete: function (e) {
                         !(function () {
-                            var e = ["th-moonlight-drive", "th-coastal-shores"],
-                                i = e[~~(Math.random() * e.length)];
-                            if (($("body").removeClass(), $("body").addClass("s-home"), $("body").addClass(i), $("body").hasClass("th-coastal-shores")))
-                                Beacon("config", { color: "#FFE1E7" }), $(".c-themer__button").removeClass("c-themer__button--active"), $(".js-coastal-shores").addClass("c-themer__button--active");
-                            else if ($("body").hasClass("th-moonlight-drive"))
-                                Beacon("config", { color: "#FFF3DD" }), $(".c-themer__button").removeClass("c-themer__button--active"), $(".js-sunset-drive").addClass("c-themer__button--active");
-                            else if ($("body").hasClass("th-alpine-nights"))
-                                Beacon("config", { color: "#0F1D19" }),
-                                    $(".c-themer__button").removeClass("c-themer__button--active"),
-                                    $(".js-alpine-nights").addClass("c-themer__button--active"),
-                                    $("#js-game").hide(),
-                                    $("#js-game-dark").show();
-                            else {
-                                if (!$("body").hasClass("th-browso")) return;
-                                Beacon("config", { color: "#FFFFFF" }), $(".c-themer__button").removeClass("c-themer__button--active"), $(".js-browso").addClass("c-themer__button--active");
+                            // Cargar por defecto Browso 98 (th-browso-nine-eight)
+                            var defaultTheme = "th-browso-nine-eight";
+                            $("body").removeClass();
+                            $("body").addClass("s-home");
+                            $("body").addClass(defaultTheme);
+
+                            if (typeof Beacon === "function") {
+                                Beacon("config", { color: "#142C69" });
                             }
+                            $(".c-themer__button").removeClass("c-themer__button--active");
+                            $(".js-browso-nine-eight").addClass("c-themer__button--active");
+
+                            $("#js-game").show();
+                            $("#js-game-dark").hide();
+                            $("#js-game-red").hide();
                         })(),
                             $(".js-progress").css("width", "70%");
                     },
@@ -301,6 +300,14 @@ const emailCompose = () => {
         if (action === "show") {
             const width = e.width();
             $(".c-modal, .c-viewer").removeClass("in-view is-moving");
+            
+            // RESETEAR estilos en línea previos (de arrastres anteriores) al volver a abrirla!
+            target.css({
+                left: "",
+                top: "",
+                transform: ""
+            });
+
             target.addClass("in-view is-moving");
             if (typeof Beacon === "function") Beacon("close");
             if (width < 992) main.hide();
@@ -321,8 +328,16 @@ const emailCompose = () => {
 
         handle.addEventListener("mousedown", (e) => {
             isDragging = true;
-            offsetX = e.clientX - modal.offsetLeft;
-            offsetY = e.clientY - modal.offsetTop;
+            
+            // Get actual on-screen coordinates using getBoundingClientRect() to avoid CSS translate offset jumps!
+            const rect = modal.getBoundingClientRect();
+            modal.style.transform = "none";
+            modal.style.position = "fixed";
+            modal.style.left = rect.left + "px";
+            modal.style.top = rect.top + "px";
+
+            offsetX = e.clientX - rect.left;
+            offsetY = e.clientY - rect.top;
             modal.style.transition = "none"; // evita salto por transición
         });
 
@@ -620,10 +635,7 @@ $(document).ready(() => {
                 contactFormButton: "Enviar mensaje a Javier"
             }
         });
-        window.Beacon("identify", {
-            name: "Javier Elvis Canqui Llusco",
-            email: "javier.elvis.code@gmail.com"
-        });
+
     }
 });
 

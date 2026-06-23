@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "work_experience": "Experiencia",
+    "my_projects": "Proyectos",
+    "references": "Referencias",
+    "support_chat": "Soporte / Chat",
+    "ask_me": "Pregúntame",
+    "themes": "Temas"
+  },
+  "cards": {
+    "profile": {
+      "title": "Carta de Presentación",
+      "entry": "Javier Elvis Canqui Llusco"
+    },
+    "contact": {
+      "title": "Contacto",
+      "entry": "Cómo contactarme"
+    },
+    "education": {
+      "title": "Educación",
+      "entry": "Siempre estudiando"
+    },
+    "technical": {
+      "title": "Hab. Técnicas",
+      "entry": "Habilidades"
+    },
+    "soft": {
+      "title": "Hab. Blandas",
+      "entry": "Habilidades"
+    },
+    "experience": {
+      "title": "Experiencia Laboral",
+      "entry": "años"
+    },
+    "projects": {
+      "title": "Mis Proyectos",
+      "entry": "Hitos personales"
+    },
+    "references": {
+      "title": "Referencias",
+      "entry": "Personales y profesionales"
+    },
+    "environment": {
+      "title": "Tu Entorno",
+      "entry": "Detalles de dispositivo"
+    }
+  },
+  "chat": {
+    "title": "Chat interactivo de Javier (AI)",
+    "qa_tab": "Preguntas y Respuestas",
+    "contact_tab": "Contacto Directo",
+    "name_label": "Tu Nombre:",
+    "email_label": "Tu Correo:",
+    "message_label": "Mensaje:",
+    "send_btn": "Enviar Correo Directo",
+    "placeholder_name": "Ej. Juan Pérez",
+    "placeholder_email": "Ej. juan@correo.com",
+    "placeholder_msg": "Hola Javier, me gustaría..."
+  }
+}

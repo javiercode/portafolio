@@ -5513,10 +5513,12 @@ p, ul, li, a, dd, button {
   display: block;
   opacity: 1;
   width: 60%;
-  top: 30%;
-  left: 40%;
+  max-width: 650px;
+  top: 50%;
+  left: 50%;
   right: auto;
   transform: translate(-50%, -50%);
+  position: fixed;
 }
 
 /* MÓVIL */
@@ -5554,64 +5556,137 @@ p, ul, li, a, dd, button {
   user-select: none;
 }
 
-/* Custom resets, alignment and responsive hover effects for retro card buttons */
+/* Unified, theme-aware retro style system for floating buttons and card buttons */
+.c-floating-chat,
+.c-floating-beacon,
 button.c-card__button,
 div.c-card__button {
     font-family: inherit;
+    font-weight: bold;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
     cursor: pointer;
     outline: none;
-    border-radius: 0;
+    border-radius: 0 !important;
+    padding: 8px 14px !important;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
-.s-home .c-card__button:hover {
-    filter: invert(100%) !important;
-    box-shadow: -2px -2px 0 0 rgba(0, 0, 0, 0.15) !important;
-    transform: scale(1.05) translate3d(0, -2px, 0) !important;
+button.c-card__button,
+div.c-card__button {
+    position: absolute;
+    bottom: 2em !important;
+    left: 2em !important;
+    opacity: 0;
+    z-index: 20;
 }
 
-.s-home .c-card__button:active {
-    transform: scale(0.95) translate3d(0, 1px, 0) !important;
+@media (min-width: 992px) {
+    .s-home button.c-card__button--large,
+    .s-home div.c-card__button--large {
+        left: auto !important;
+        right: 2em !important;
+        bottom: 35% !important;
+    }
 }
 
-/* Floating Retro Chat & Beacon Buttons with matching styles */
-.c-floating-chat,
+.s-home .c-card:hover button.c-card__button,
+.s-home .c-card:hover div.c-card__button {
+    opacity: 1 !important;
+}
+
+.c-floating-chat {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
 .c-floating-beacon {
     position: fixed;
     bottom: 20px;
-    z-index: 9999;
-    background: #142C69;
-    color: #fff;
-    border: 2px solid #42DDB3;
-    padding: 10px 15px;
-    font-family: inherit;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 3px 3px 0 0 #000;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-.c-floating-chat {
-    left: 20px;
-}
-.c-floating-beacon {
     right: 20px;
+    z-index: 9999;
 }
+
+/* Base hover and active animations */
 .c-floating-chat:hover,
-.c-floating-beacon:hover {
-    -webkit-transform: translate(-2px, -2px);
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0 0 #000;
-    background: #42DDB3;
-    color: #142C69;
+.c-floating-beacon:hover,
+.c-card__button:hover {
+    filter: invert(100%) !important;
+    -webkit-transform: scale(1.05) translate3d(0, -2px, 0) !important;
+    transform: scale(1.05) translate3d(0, -2px, 0) !important;
 }
+
 .c-floating-chat:active,
-.c-floating-beacon:active {
-    -webkit-transform: translate(1px, 1px);
-    transform: translate(1px, 1px);
-    box-shadow: 1px 1px 0 0 #000;
+.c-floating-beacon:active,
+.c-card__button:active {
+    -webkit-transform: scale(0.95) translate3d(0, 1px, 0) !important;
+    transform: scale(0.95) translate3d(0, 1px, 0) !important;
+}
+
+/* Theme overrides for full visual consistency across custom theme selections */
+
+/* 1. Default / Browso 98 Theme */
+.s-home.th-browso-nine-eight .c-floating-chat,
+.s-home.th-browso-nine-eight .c-floating-beacon,
+.s-home.th-browso-nine-eight .c-card__button {
+    background: #C6CECF !important;
+    color: #191516 !important;
+    border: 1px solid #4E5252 !important;
+    box-sizing: border-box;
+    box-shadow: inset 1.5px 1.5px 0 0 #fff, inset -1.5px -1.5px 0 0 #4E5252, 2px 2px 0 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2. Sunset Drive Theme */
+.s-home.th-moonlight-drive .c-floating-chat,
+.s-home.th-moonlight-drive .c-floating-beacon,
+.s-home.th-moonlight-drive .c-card__button {
+    background: #FFF3DD !important;
+    color: #142C69 !important;
+    border: 1px solid #142C69 !important;
+    box-shadow: inset 0 1px 0 0 #fff, 3px 3px 0 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 3. Coastal Shores Theme */
+.s-home.th-coastal-shores .c-floating-chat,
+.s-home.th-coastal-shores .c-floating-beacon,
+.s-home.th-coastal-shores .c-card__button {
+    background: #FFE1E7 !important;
+    color: #142C69 !important;
+    border: 1px solid #142C69 !important;
+    box-shadow: inset 0 1px 0 0 #fff, 3px 3px 0 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 4. Alpine Nights Theme */
+.s-home.th-alpine-nights .c-floating-chat,
+.s-home.th-alpine-nights .c-floating-beacon,
+.s-home.th-alpine-nights .c-card__button {
+    background: #0F1D19 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    box-shadow: 3px 3px 0 0 #fff !important;
+}
+
+/* 5. Red Dawn Theme */
+.s-home.th-red-dawn .c-floating-chat,
+.s-home.th-red-dawn .c-floating-beacon,
+.s-home.th-red-dawn .c-card__button {
+    background: #9B2325 !important;
+    color: #fff !important;
+    border: 1px solid #640A0E !important;
+    box-shadow: inset 1px 1px 0 0 #c52c2f, 3px 3px 0 0 #640A0E !important;
+}
+
+/* 6. Classic Browso Theme */
+.s-home.th-browso .c-floating-chat,
+.s-home.th-browso .c-floating-beacon,
+.s-home.th-browso .c-card__button {
+    background: #fff !important;
+    color: #142C69 !important;
+    border: 1px solid #142C69 !important;
+    box-shadow: inset 0 1px 0 0 #fff, -1px -1px 0 0 rgba(255, 113, 234, 0.5), 2px 2px 0 0 #142C69 !important;
 }
 
 /* Retro Chat Modal */
@@ -5657,6 +5732,29 @@ div.c-card__button {
 .c-chat-option:hover {
     background: #42DDB3;
     color: #142C69;
+}
+
+/* Efecto de ofuscamiento (blur + fade) para tarjetas verdes al hacer hover */
+.c-card__definition {
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.c-card--green:hover .c-card__definition {
+  filter: blur(1.5px);
+  opacity: 0.55;
+}
+
+/* Centrar botones grandes dentro de las tarjetas verdes */
+@media (min-width: 992px) {
+  .s-home .c-card--green .c-card__button--large {
+    left: 50% !important;
+    right: auto !important;
+    transform: translate3d(-50%, 10px, 0);
+  }
+  
+  .s-home .c-card--green:hover .c-card__button--large {
+    transform: translate3d(-50%, 0, 0) !important;
+  }
 }
 
 
