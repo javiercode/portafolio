@@ -1,3 +1,4 @@
+window.Beacon = window.Beacon || function() {};
 var $musicBarHeightTimer = 100;
 function visualizer() {
     var e = function () {
@@ -722,4 +723,56 @@ Quedo atento a tus comentarios. Saludos cordiales.`;
                       "&body=" + encodeURIComponent(body);
                       
     window.location.href = mailtoUrl;
+});
+
+// Dynamic pre-formatted WhatsApp Contact Form trigger
+$(document).on("click", ".js-contact-whatsapp", function() {
+    const name = $("#contact-name").val().trim();
+    const email = $("#contact-email").val().trim();
+    const msg = $("#contact-message").val().trim();
+    
+    if(!name || !email || !msg) {
+        alert("Por favor completa todos los campos del formulario para enviar por WhatsApp.");
+        return;
+    }
+    
+    const text = `Hola Javier, mi nombre es ${name} (${email}).
+
+Te escribo por lo siguiente:
+--------------------------------------------------
+${msg}
+--------------------------------------------------`;
+    
+    const whatsappUrl = "https://wa.me/59160609024?text=" + encodeURIComponent(text);
+    window.open(whatsappUrl, "_blank");
+});
+
+// Floating Support/WhatsApp Trigger
+$(document).on("click", ".js-trigger-whatsapp", function() {
+    const text = "Hola Javier, vi tu portafolio y me gustaría contactarte para soporte / información.";
+    const whatsappUrl = "https://wa.me/59160609024?text=" + encodeURIComponent(text);
+    window.open(whatsappUrl, "_blank");
+
+    /* 
+    NOTA PARA EL DESARROLLADOR:
+    Si en el futuro deseas conectar este botón a un endpoint REST propio (por ejemplo, para guardar logs de auditoría,
+    telemetría, o enviar a un webhook de Discord/Slack antes de redirigir), puedes descomentar e implementar la siguiente lógica:
+
+    const requestData = {
+        event: "support_click",
+        timestamp: new Date().toISOString(),
+        referrer: document.referrer || "direct"
+    };
+
+    fetch("TU_URL_DE_API_REST", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => console.log("Registro REST exitoso"))
+    .catch(error => console.error("Error al registrar evento:", error))
+    .finally(() => {
+        window.open(whatsappUrl, "_blank");
+    });
+    */
 });

@@ -53,6 +53,7 @@
     "email_label": "Your Email:",
     "message_label": "Message:",
     "send_btn": "Send Direct Email",
+    "whatsapp_btn": "Send via WhatsApp 💬",
     "placeholder_name": "e.g. John Doe",
     "placeholder_email": "e.g. john@email.com",
     "placeholder_msg": "Hi Javier, I would like to..."

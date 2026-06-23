@@ -53,6 +53,7 @@
     "email_label": "Tu Correo:",
     "message_label": "Mensaje:",
     "send_btn": "Enviar Correo Directo",
+    "whatsapp_btn": "Enviar por WhatsApp 💬",
     "placeholder_name": "Ej. Juan Pérez",
     "placeholder_email": "Ej. juan@correo.com",
     "placeholder_msg": "Hola Javier, me gustaría..."
