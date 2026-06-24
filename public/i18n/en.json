@@ -3,8 +3,8 @@
     "work_experience": "Experience",
     "my_projects": "Projects",
     "references": "References",
-    "support_chat": "Support / Chat",
-    "ask_me": "Ask Me",
+    "support_chat": "💬 Contact Me",
+    "ask_me": "💬 Ask Me",
     "themes": "Themes"
   },
   "cards": {
@@ -17,32 +17,32 @@
       "entry": "How to contact me"
     },
     "education": {
-      "title": "Education",
+      "title": "EDUCATION",
       "entry": "always studying"
     },
     "technical": {
-      "title": "Technical Skills",
-      "entry": "Skills"
+      "title": "TECHNICAL",
+      "entry": "SKILLS"
     },
     "soft": {
-      "title": "Soft Skills",
-      "entry": "Skills"
+      "title": "SOFT",
+      "entry": "SKILLS"
     },
     "experience": {
-      "title": "Work Experience",
+      "title": "WORK EXPERIENCE",
       "entry": "years"
     },
     "projects": {
-      "title": "My Projects",
-      "entry": "Personal highlights"
+      "title": "MY PROJECTS",
+      "entry": "personal highlights"
     },
     "references": {
-      "title": "References",
-      "entry": "Personal and professional"
+      "title": "REFERENCES",
+      "entry": "personal and professional"
     },
     "environment": {
-      "title": "Your Environment",
-      "entry": "Device details"
+      "title": "YOUR ENVIRONMENT",
+      "entry": "device details"
     }
   },
   "chat": {
@@ -56,6 +56,19 @@
     "whatsapp_btn": "Send via WhatsApp 💬",
     "placeholder_name": "e.g. John Doe",
     "placeholder_email": "e.g. john@email.com",
-    "placeholder_msg": "Hi Javier, I would like to..."
+    "placeholder_msg": "Hi Javier, I would like to...",
+    "welcome_msg": "🤖 [Javier_AI]: Hello recruiter! I am Javier's virtual assistant. Click on any question below to learn about my Senior Software / AI Engineer capabilities.",
+    "q_exp": "💼 What is your experience as a Senior?",
+    "a_exp": "I have over 12 years of full-stack development experience, leading teams in the financial and government sectors. I have designed distributed architectures, billing engines, massive mobile apps, and predictive Machine Learning models that directly impact business results.",
+    "q_tech": "🛠️ What technologies do you mainly master?",
+    "a_tech": "Backend: Node.js, .NET Core, Java (Spring Boot), Python, and PHP. Frontend: React, React Native, Angular, Vue, and TypeScript. Databases: Oracle, SQL Server, MongoDB, PostgreSQL, MySQL. DevOps: Docker, Jenkins, Kubernetes, Grafana, and AWS.",
+    "q_leader": "👥 How do you handle leadership and methodologies?",
+    "a_leader": "I have led teams under agile (SCRUM/Kanban) and traditional (ICONIX) methodologies. I strongly believe in mentorship, thorough code reviews, test automation, and designing clean, well-documented APIs to ensure long-term scalability.",
+    "q_ml": "🧠 What experience do you have in AI / ML?",
+    "a_ml": "Yes, I obtained a post-graduate degree in Machine Learning. I have deployed predictive models of customer behavior in production for credit placement and customer acquisition, as well as interactive chatbots with advanced conversational flows in Dialogflow.",
+    "q_remote": "🏠 Are you available for remote work?",
+    "a_remote": "Yes, I have extensive experience working remotely with distributed teams. I adapt perfectly to different time zones, am self-managed, and focused on practical business results.",
+    "q_contact": "📞 How can we contact you?",
+    "a_contact": "You can write to me directly at javier.elvis.code@gmail.com, call me at +591 60609024, or connect on LinkedIn: linkedin.com/in/javier-elvis-canqui-llusco-34630b42. I'd be delighted to chat!"
   }
 }

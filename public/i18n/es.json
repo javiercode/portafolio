@@ -3,8 +3,8 @@
     "work_experience": "Experiencia",
     "my_projects": "Proyectos",
     "references": "Referencias",
-    "support_chat": "Soporte / Chat",
-    "ask_me": "Pregúntame",
+    "support_chat": "💬 Contáctame",
+    "ask_me": "💬 Pregúntame",
     "themes": "Temas"
   },
   "cards": {
@@ -56,6 +56,19 @@
     "whatsapp_btn": "Enviar por WhatsApp 💬",
     "placeholder_name": "Ej. Juan Pérez",
     "placeholder_email": "Ej. juan@correo.com",
-    "placeholder_msg": "Hola Javier, me gustaría..."
+    "placeholder_msg": "Hola Javier, me gustaría...",
+    "welcome_msg": "🤖 [Javier_AI]: ¡Hola reclutador! Soy el asistente virtual de Javier. Haz clic en cualquier pregunta abajo para conocer mis capacidades de Ingeniero de Software / IA Senior.",
+    "q_exp": "💼 ¿Cuál es tu experiencia como Senior?",
+    "a_exp": "Tengo más de 12 años de experiencia en desarrollo full-stack, liderando equipos en el sector financiero y gubernamental. He diseñado arquitecturas distribuidas, motores de cobranzas, apps móviles masivas y modelos predictivos de Machine Learning que impactan directamente en el negocio.",
+    "q_tech": "🛠️ ¿Qué tecnologías dominas principalmente?",
+    "a_tech": "Backend: Node.js, .NET Core, Java (Spring Boot), Python y PHP. Frontend: React, React Native, Angular, Vue y TypeScript. BD: Oracle, SQL Server, MongoDB, PostgreSQL, MySQL. DevOps: Docker, Jenkins, Kubernetes, Grafana y AWS.",
+    "q_leader": "👥 ¿Cómo manejas liderazgo y metodologías?",
+    "a_leader": "He liderado equipos bajo metodologías ágiles (SCRUM/Kanban) y tradicionales (ICONIX). Creo firmemente en la mentoría, revisiones de código exhaustivas, automatización de pruebas y en el diseño de APIs limpias y bien documentadas para garantizar escalabilidad a largo plazo.",
+    "q_ml": "🧠 ¿Qué experiencia tienes en IA / ML?",
+    "a_ml": "Sí, obtuve un postgrado en Machine Learning. He implementado en producción de modelos predictivos de comportamiento de clientes para captación y colocación de créditos, además de chatbots interactivos con flujos conversacionales avanzados en Dialogflow.",
+    "q_remote": "🏠 ¿Estás disponible para trabajo remoto?",
+    "a_remote": "Sí, tengo amplia experiencia trabajando de forma remota con equipos distribuidos. Me adapto perfectamente a diferentes zonas horarias, soy autogestionado y enfocado a resultados prácticos de negocio.",
+    "q_contact": "📞 ¿Cómo podemos contactarte?",
+    "a_contact": "Puedes escribirme directamente a javier.elvis.code@gmail.com, llamarme al +591 60609024 o conectar en LinkedIn: linkedin.com/in/javier-elvis-canqui-llusco-34630b42. ¡Estaré encantado de conversar!"
   }
 }
