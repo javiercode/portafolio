@@ -5,7 +5,10 @@
     "references": "Referencias",
     "support_chat": "💬 Contáctame",
     "ask_me": "💬 Pregúntame",
-    "themes": "Temas"
+    "themes": "Temas",
+    "game": "Retro Pong",
+    "music": "Reproductor",
+    "info": "Información"
   },
   "cards": {
     "profile": {

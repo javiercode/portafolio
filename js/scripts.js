@@ -576,7 +576,10 @@ const enDictionary = {
     "references": "References",
     "support_chat": "💬 Contact Me",
     "ask_me": "💬 Ask Me",
-    "themes": "Themes"
+    "themes": "Themes",
+    "game": "Retro Pong",
+    "music": "Music Player",
+    "info": "Site Info"
   },
   "cards": {
     "profile": {

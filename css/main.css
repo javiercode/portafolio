@@ -4337,7 +4337,7 @@ p, ul, li, a, dd, button {
     position: relative;
     width: 95%;
     z-index: 500;
-    margin: 4em auto 3em; }
+    margin: 1em auto 2em; }
     .s-home .c-themer.in-view {
       display: block; }
     @media (min-width: 992px) {
@@ -5535,7 +5535,7 @@ p, ul, li, a, dd, button {
   .c-modal.in-view {
     display: block;
     opacity: 1;
-    top: 30%;
+    top: 2%;
     right: auto;
     /* Reset de propiedades de escritorio */
     left: 0%;
