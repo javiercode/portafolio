@@ -1,0 +1,3 @@
+- separa la logica de los colres de temas en un archivo diferente al main
+- para el tema por defecto, tomando en cuenta los colores de titulo, ventanas, y todo tipo de contraste con texto aplica una logica de colores primarios, secundarios, etc. Basandote en los temas ya establecidos
+- El tema principal basate en la paleta de colores de windows 98
