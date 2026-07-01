@@ -3,7 +3,7 @@
 Un portafolio interactivo premium de estilo retro y vintage que simula un sistema de escritorio virtual de los años 90. Este proyecto ha sido minuciosamente adaptado, optimizado y personalizado para mostrar la trayectoria profesional, habilidades técnicas, formación académica, referencias y proyectos de **Javier Canqui Llusco** (Senior Software Engineer / Ingeniero de Inteligencia Artificial & Machine Learning).
 
 Puedes explorar, auditar y clonar el código de este proyecto o probarlo en vivo desde su repositorio oficial en:
-👉 **[https://github.com/javiercode/portafolio](https://github.com/javiercode/portafolio)**
+👉 **[https://github.com/javiercode/portafolio](https://javiercode.github.io/portafolio/)**
 
 ---
 
